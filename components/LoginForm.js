@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { loginUser } from '../lib/auth';
+import Router from 'next/router';
 
 const LoginForm = () => {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('Sincere@april.biz');
+  const [password, setPassword] = useState('hildegard.org');
 
   const onChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -14,10 +15,15 @@ const LoginForm = () => {
     setPassword(event.target.value);
   }
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     console.log('email: ', email, ', password: ', password);
-    loginUser(email, password);
+    try {
+      await loginUser(email, password);
+      Router.push('/profile');
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
