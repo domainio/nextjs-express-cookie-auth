@@ -6,12 +6,15 @@
   "author": "Erez",
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "next": "^9.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
