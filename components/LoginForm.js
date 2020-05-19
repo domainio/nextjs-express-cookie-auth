@@ -3,8 +3,8 @@ import { loginUser } from '../lib/auth';
 
 const LoginForm = () => {
 
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const onChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -23,10 +23,22 @@ const LoginForm = () => {
   return (
     <form onSubmit={onSubmit}>
       <div>
-        <input type="email" name="email" placeholder="email" onChange={onChangeEmail} />
+        <input
+          type="email"
+          name="email"
+          placeholder="email"
+          value={email}
+          onChange={onChangeEmail}
+        />
       </div>
       <div>
-        <input type="password" name="password" placeholder="password" onChange={onChangePassword} />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          value={password}
+          onChange={onChangePassword}
+        />
       </div>
       <button type="submit">Submit</button>
     </form>
