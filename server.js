@@ -50,8 +50,6 @@ app.prepare().then(() => {
   server.get('/api/profile', async (req, res) => {
     const { signedCookies = {} } = req;
     const { token } = signedCookies;
-    console.log('signedCookies: ', signedCookies);
-    console.log('token: ', token);
     if (token && token.email) {
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       const { data: users } = response;
