@@ -20,6 +20,6 @@ const ProfilePage = (props) => {
   )
 };
 
-ProfilePage.getInitialProps = authInitialProps();
+ProfilePage.getInitialProps = authInitialProps(true);
 
 export default ProfilePage;
