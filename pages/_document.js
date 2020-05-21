@@ -5,7 +5,10 @@ class CustomDocumentPage extends Document {
 
   static getInitialProps = async (ctx) => {
     const props = await Document.getInitialProps(ctx);
+    console.log('_doc > getInitialProps > props: ', props);
+    console.log('_doc > getInitialProps > ctx: ', ctx);
     const userData = await getServerSideToken(ctx.req);
+    console.log('_doc > getInitialProps > userData: ', userData);
     return { ...props, ...userData };
   }
 
